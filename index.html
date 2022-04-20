@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <title>Simple JS App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/favicon.ico">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -12,12 +15,25 @@
 </head>
 
 <body>
-    <header>
-
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="header-logo">
+            <a href="index.html" class="page-header__item"><img src="./img/pokedex.png" alt="logo"
+                    class="logo-image"></a>
+        </div>
     </header>
+
+    <!-- MAIN -->
     <main>
-        <script src="js/scripts.js"></script>
+        <div class="page-content">
+            <h1>List of Pokemon:</h1>
+            <div class="pokemon-list">
+                <script src="js/scripts.js"></script>
+            </div>
+        </div>
     </main>
+
+    <!-- FOOTER -->
     <footer>
 
     </footer>

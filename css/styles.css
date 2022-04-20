@@ -1,0 +1,73 @@
+/* Colors
+Header Background: lightgrey
+
+*/
+
+:root {
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: var(--font-weight-regular);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.page-header {
+    width: 100%;
+    text-align: center;
+    background-color: lightgrey;
+}
+
+.logo-image {
+    max-width: 350px;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.page-content {
+    margin: 0 100px;
+    text-align: center;
+}
+
+.pokemon-list {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "";
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg);
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+    margin-right: 0.2rem;
+}
+
+/* RESPONSIVNESS */
+@media all and (max-width: 600px) {
+
+    .page-content {
+        margin: 0 30px;
+    }
+
+    .logo-image {
+        max-width: 250px;
+    }
+
+}
