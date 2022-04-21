@@ -9,7 +9,11 @@ let pokemonRepository = (function () {
 
     return {
         add: function (item) {
-            pokemonList.push(item);
+            if (typeof item === 'object') {
+                pokemonList.push(item);
+            } else {
+                return 'Input invalid.'
+            }
         },
         getAll: function () {
             return pokemonList;
