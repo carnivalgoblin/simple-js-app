@@ -18,17 +18,6 @@ let pokemonRepository = (function () {
     }
 })();
 
-/* document.write('<ul class="pokemon-list">')
-
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write('<li>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')')
-    if (pokemonList[i].height > 5) {
-        document.write(' - wow this pokemon is big!' + '</li>' + '<br>')
-    } else { document.write('</li>' + '<br>') }
-}
-
-document.write('</ul>') */
-
 document.write('<ul class="pokemon-list">')
 
 pokemonRepository.getAll().forEach(function (pokemon) {
