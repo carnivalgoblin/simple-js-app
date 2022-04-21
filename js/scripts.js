@@ -6,7 +6,7 @@ pokemonList = [
     { name: "Charizard", height: 15, types: ['fire', 'flying'] }
 ];
 
-document.write('<ul>')
+document.write('<ul class="pokemon-list">')
 
 for (let i = 0; i < pokemonList.length; i++) {
     document.write('<li>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')')

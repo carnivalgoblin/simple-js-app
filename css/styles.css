@@ -62,7 +62,7 @@ ul {
     padding-left: 0;
 }
 
-ul li::before {
+.pokemon-list li::before {
     content: "";
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg);
     background-size: contain;
@@ -77,19 +77,20 @@ ul li::before {
 /* RESPONSIVNESS */
 @media all and (max-width: 600px) {
 
+    body {
+        font-size: 12px;
+    }
+
     h1 {
         font-size: 20px;
-        font-weight: var(--font-weight-bold);
     }
 
     h2 {
-        font-size: 14px;
-        font-weight: var(--font-weight-bold);
+        font-size: 16px;
     }
 
     h3 {
-        font-size: 8px;
-        font-weight: var(--font-weight-bold);
+        font-size: 12px;
     }
 
     .page-content {
@@ -99,7 +100,5 @@ ul li::before {
     .logo-image {
         max-width: 250px;
     }
-
-
 
 }
