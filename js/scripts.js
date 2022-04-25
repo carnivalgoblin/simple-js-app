@@ -9,6 +9,7 @@ let pokemonRepository = (function () {
         { name: 'Charizard', height: 1.5, types: ['fire', 'flying'] }
     ];
 
+    /* FUNTION TO ADD POKEMON TO LIST */
     function add(pokemon) {
         if (Object.keys(pokemon).includes('name')) {
             pokemonList.push(pokemon);
@@ -19,43 +20,41 @@ let pokemonRepository = (function () {
 
     }
 
+    /* FUNCTION TO DISPLAY POKEMON FROM LIST and CREATE LI FOR EACH POKEMON AS A BUTTON BOX */
+    function addListItem(pokemon) {
+        let ulList = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button-box');
+
+
+        /* APPEND TO LISTEITEM AND ULLIST */
+        listItem.appendChild(button);
+        ulList.appendChild(listItem);
+
+        /* ADD EVENTLISTENER ON BUTTON */
+        button.addEventListener('click', showDetails(pokemon));
+    }
+
+    /* FUNCTION TO REVEAL MORE DETAILS */
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
+
+    /* RETURN ALL POKEMON */
     function getAll() {
         return pokemonList;
     }
 
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem
     };
 })();
 
-/* CALL REPO */
-
-document.write('<ul class="pokemon-list">');
-
+/* CALL ADDLISTITEM FOR ALL POKEMON IN LIST */
 pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ')')
-    if (pokemon.height > 1) {
-        document.write(' - wow this pokemon is big!' + '</li>' + '<br>')
-    } else { document.write('</li>' + '<br>') }
+    pokemonRepository.addListItem(pokemon);
 });
-
-document.write('</ul> <br>');
-
-/* DEFINE NEW POKEMON, WRITE TO DOM AND ADD IT TO REPO*/
-
-/* let newPokemon = { name: 'Ditto', height: 0.3, types: ['normal'] };
-
-
-document.write('<ul class="pokemon-list">');
-
-document.write('Adding new Pokemon:<br><br>');
-
-document.write('<li>' + newPokemon.name + ' (height: ' + newPokemon.height + ')')
-if (newPokemon.height > 1) {
-    document.write(' - wow this pokemon is big!' + '</li>' + '<br>')
-} else { document.write('</li>' + '<br>') };
-
-document.write('</ul> <br><br>');
-
-pokemonRepository.add(newPokemon); */

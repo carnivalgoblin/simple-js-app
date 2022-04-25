@@ -62,7 +62,7 @@ ul {
     padding-left: 0;
 }
 
-.pokemon-list li::before {
+/* .pokemon-list li::before {
     content: "";
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg);
     background-size: contain;
@@ -72,6 +72,18 @@ ul {
     position: relative;
     top: 0.1rem;
     margin-right: 0.2rem;
+}
+ */
+.button-box {
+    background-color: lightgray;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: inline-block;
+    color: black;
+    width: 250px;
+    padding: 20px 70px;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
 /* RESPONSIVNESS */
