@@ -34,7 +34,10 @@ let pokemonRepository = (function () {
         ulList.appendChild(listItem);
 
         /* ADD EVENTLISTENER ON BUTTON */
-        button.addEventListener('click', showDetails(pokemon));
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+        });
+
     }
 
     /* FUNCTION TO REVEAL MORE DETAILS */
@@ -50,7 +53,8 @@ let pokemonRepository = (function () {
     return {
         add: add,
         getAll: getAll,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     };
 })();
 
