@@ -14,10 +14,7 @@ let pokemonRepository = (function () {
         if (Object.keys(pokemon).includes('name')) {
             pokemonList.push(pokemon);
         } else {
-            /*             let invalidInput = document.createElement('p');
-                        invalidInput.innerText = 'Input invalid.';
-                        ulList.appendChild(invalidInput); */
-            return (console.log('Input invalid.')
+            return (alert('Input invalid.')
             )
         }
 
@@ -26,6 +23,9 @@ let pokemonRepository = (function () {
     /* FUNCTION TO DISPLAY POKEMON FROM LIST and CREATE LI FOR EACH POKEMON AS A BUTTON BOX */
     function addListItem(pokemon) {
         let ulList = document.querySelector('.pokemon-list');
+        ulList.classList.add('grid');
+        let gridItem = document.createElement('div');
+        gridItem.classList.add('grid__item')
         let listItem = document.createElement('li');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
@@ -34,7 +34,9 @@ let pokemonRepository = (function () {
 
         /* APPEND TO LISTEITEM AND ULLIST */
         listItem.appendChild(button);
-        ulList.appendChild(listItem);
+        ulList.appendChild(gridItem);
+        gridItem.appendChild(listItem);
+
 
         /* ADD EVENTLISTENER ON BUTTON */
         button.addEventListener('click', function () {
