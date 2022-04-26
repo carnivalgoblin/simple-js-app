@@ -17,6 +17,25 @@ body {
     box-sizing: border-box;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+a:active {
+    color: lightseagreen;
+}
+
 h1 {
     font-size: 30px;
     font-weight: var(--font-weight-bold);
