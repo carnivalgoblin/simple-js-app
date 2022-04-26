@@ -17,7 +17,6 @@ let pokemonRepository = (function () {
             return (alert('Input invalid.')
             )
         }
-
     }
 
     /* FUNCTION TO DISPLAY POKEMON FROM LIST and CREATE LI FOR EACH POKEMON AS A BUTTON BOX */
@@ -31,7 +30,6 @@ let pokemonRepository = (function () {
         button.innerText = pokemon.name;
         button.classList.add('button-box');
 
-
         /* APPEND TO LISTEITEM AND ULLIST */
         listItem.appendChild(button);
         ulList.appendChild(gridItem);
@@ -42,7 +40,6 @@ let pokemonRepository = (function () {
         button.addEventListener('click', function () {
             showDetails(pokemon)
         });
-
     }
 
     /* FUNCTION TO REVEAL MORE DETAILS */
