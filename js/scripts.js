@@ -14,8 +14,11 @@ let pokemonRepository = (function () {
         if (Object.keys(pokemon).includes('name')) {
             pokemonList.push(pokemon);
         } else {
-            return (console.log('Input invalid. ' + pokemon + ' is not a valid input.'),
-                document.write('<p>' + 'Input invalid. ' + pokemon + ' is not a valid input.' + '</p>'))
+            /*             let invalidInput = document.createElement('p');
+                        invalidInput.innerText = 'Input invalid.';
+                        ulList.appendChild(invalidInput); */
+            return (console.log('Input invalid.')
+            )
         }
 
     }
