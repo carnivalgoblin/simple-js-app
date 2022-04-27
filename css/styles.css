@@ -1,5 +1,6 @@
 /* Colors
 Header Background: lightgrey
+a: darkblue, lightseagreen, black
 
 */
 
@@ -161,9 +162,9 @@ ul {
         font-size: 12px;
     }
 
-    .page-content {
+    /*     .page-content {
         margin: 0 30px;
-    }
+    } */
 
     .logo-image {
         max-width: 250px;
