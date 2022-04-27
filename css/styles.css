@@ -75,7 +75,7 @@ h3 {
 }
 
 .list-box {
-    margin: 0 100px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -182,7 +182,6 @@ ul {
         max-width: 170px;
         padding: 20px 50px;
     }
-
 }
 
 
