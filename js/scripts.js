@@ -84,11 +84,6 @@ let pokemonRepository = (function () {
         });
     }
 
-    /* EVENT LISTENER FOR MODAL ON CLICK */
-    document.querySelector('#show-modal').addEventListener('click', () => {
-        showModal('Modal title', 'Modal content');
-    });
-
     /* EVENT LISTENER FOR ESCAPE TO CLOSE MODAL */
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
