@@ -115,6 +115,7 @@ ul {
     padding: 20px 70px;
     text-decoration: none;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 /* MODAL */
