@@ -239,7 +239,7 @@ ul {
     }
 }
 
-@media all and (min-width: 1100px) {
+@media all and (min-width: 1100px) and (max-width: 1800px) {
     /* 3 COLUMN */
 
     .grid {
@@ -247,6 +247,21 @@ ul {
     }
 }
 
+@media all and (min-width: 1800px) and (max-width: 2200px) {
+    /* 4 COLUMN */
+
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media all and (min-width: 2200px) {
+    /* 5 COLUMN */
+
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
 
 /* START FIXED HEADER; FOOTER */
 html,
