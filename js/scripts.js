@@ -3,8 +3,6 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    let modalContainer = document.querySelector('#modal-container');
-
 
     /* FUNTION TO ADD POKEMON TO LIST */
     function add(pokemon) {
@@ -19,30 +17,23 @@ let pokemonRepository = (function () {
     /* FUNCTION TO DISPLAY POKEMON FROM LIST and CREATE LI FOR EACH POKEMON AS A BUTTON BOX */
     function addListItem(pokemon) {
         let ulList = document.querySelector('.pokemon-list');
-        ulList.classList.add('grid');
-        let gridItem = document.createElement('div');
-        gridItem.classList.add('grid__item')
+        ulList.classList.add('list-group', 'grid');
         let listItem = document.createElement('li');
+        listItem.classList.add('list-group-item', 'grid__item');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
-        button.classList.add('button-box');
+        button.classList.add('btn', 'btn-outline-primary', 'btn-lg');
+        button.setAttribute('type', 'button');
+        button.setAttribute('data-toggle', 'modal');
+        button.setAttribute('data-target', '#modalContainer');
 
         /* APPEND TO LISTEITEM AND ULLIST */
         listItem.appendChild(button);
-        ulList.appendChild(gridItem);
-        gridItem.appendChild(listItem);
-
+        ulList.appendChild(listItem);
 
         /* ADD EVENTLISTENER ON BUTTON */
         button.addEventListener('click', function () {
             showDetails(pokemon)
-        });
-    }
-
-    /* FUNCTION TO REVEAL MORE DETAILS */
-    function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-            showModal(pokemon);
         });
     }
 
@@ -83,37 +74,23 @@ let pokemonRepository = (function () {
         });
     }
 
-    /* EVENT LISTENER FOR ESCAPE TO CLOSE MODAL */
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-            hideModal();
-        }
-    });
-
-    /* EVENT LISTENER FOR CLICK OUTSIDE OF MODAL TO CLOSE */
-    modalContainer.addEventListener('click', (e) => {
-        let target = e.target;
-        if (target === modalContainer) {
-            hideModal();
-        }
-    });
+    /* FUNCTION TO REVEAL MORE DETAILS */
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function () {
+            showModal(pokemon);
+        });
+    }
 
     /* MODALSHOW FUNCTION */
     function showModal(pokemon) {
-        modalContainer.innerHTML = '';
 
-        /* CREATE DIV FOR MODAL AND ASSIGN CLASS */
-        let modal = document.createElement('div');
-        modal.classList.add('modal');
+        let modalBody = $('.modal-body');
+        let modalTitle = $('.modal-title');
 
-        /* DEFINE CLOSE BUTTON */
-        let closeButtonElement = document.createElement('button');
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText = 'X';
-        closeButtonElement.addEventListener('click', hideModal);
+        modalTitle.empty();
+        modalBody.empty();
 
-        /* DEFINE CONTENT FOR MODAL */
-        let titleElement = document.createElement('H1');
+        let titleElement = document.createElement('h1');
         titleElement.innerText = pokemon.name;
 
         let heightElement = document.createElement('p');
@@ -127,20 +104,10 @@ let pokemonRepository = (function () {
         imageElement.src = pokemon.imageUrl;
 
         /* APPEND CONTENT INTO MODAL */
-        modal.appendChild(closeButtonElement);
-        modal.appendChild(titleElement);
-        modal.appendChild(imageElement);
-        modal.appendChild(heightElement);
-        modal.appendChild(weightElement);
-        modalContainer.appendChild(modal);
-
-        /* MAKE MODAL VISIBLE */
-        modalContainer.classList.add('is-visible');
-    }
-
-    /* HIDE MODAL */
-    function hideModal() {
-        modalContainer.classList.remove('is-visible');
+        modalTitle.append(titleElement);
+        modalBody.append(imageElement);
+        modalBody.append(heightElement);
+        modalBody.append(weightElement);
     }
 
     return {
