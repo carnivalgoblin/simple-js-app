@@ -2,7 +2,7 @@
 
 ## JavaScript App to fetch Pokemon data from an API
 
-## Pokedex
+Pokedex
 
 ## About the App
 
