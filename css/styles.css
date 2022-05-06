@@ -212,6 +212,11 @@ ul {
     .btn {
         width: 220px;
     }
+
+    .modal-image {
+        width: 200px;
+        height: auto;
+    }
 }
 
 
