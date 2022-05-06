@@ -76,7 +76,7 @@ h3 {
 .page-header {
     width: 100%;
     text-align: center;
-    background-color: lightgrey;
+    background-color: #eee;
 }
 
 .page-content {
@@ -86,7 +86,7 @@ h3 {
 .page-footer {
     width: 100%;
     text-align: center;
-    background-color: lightgrey;
+    background-color: #eee;
     height: 100px;
 }
 
@@ -123,13 +123,22 @@ ul {
 }
 
 .navbar {
-    background-color: lightgray;
+    background-color: #fafafa;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
 
 /* MODAL */
 .modal-image {
     width: 300px;
     height: auto;
+}
+
+.modal-content {
+    border-radius: 15px;
 }
 
 /* END MODAL */
