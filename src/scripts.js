@@ -9,8 +9,7 @@ let pokemonRepository = (function () {
         if (Object.keys(pokemon).includes('name')) {
             pokemonList.push(pokemon);
         } else {
-            return (alert('Input invalid.')
-            )
+            return (alert('Input invalid.'))
         }
     }
 
