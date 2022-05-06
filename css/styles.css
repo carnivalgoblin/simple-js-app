@@ -61,11 +61,16 @@ h3 {
 .btn {
     width: 250px;
     text-transform: capitalize;
-    background-color: #0091ff;
+    background-color: #9ac5e6;
     color: black;
-    border: none;
+    border: 1px solid black;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #194668;
+    border: 1px solid black;
 }
 
 .page-header {
