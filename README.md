@@ -2,10 +2,12 @@
 
 ## JavaScript App to fetch Pokemon data from an API
 
+## Description
 A small web app with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data.
 Pokedex
 
 ![web image](/img/pokedex1.png)
+![web image](/img/Simple-JS-App.png)
 
 ## About the App
 
